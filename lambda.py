@@ -7,5 +7,10 @@ def lambda_handler(event, context):
     conf = c.getresponse().read().decode('utf-8')
     with open('/tmp/planet-if.conf', 'w') as f:
         f.write(conf)
-    return subprocess.check_output(['python', 'venus/planet.py', '/tmp/planet-if.conf']).decode('utf-8').split('\n')
-
+    cmd = ['python', 'venus/planet.py', '/tmp/planet-if.conf']
+    try:
+        return subprocess.check_output(cmd, stderr=subprocess.STDOUT).decode('utf-8').split('\n')
+    except subprocess.CalledProcessError as e:
+        print(e.output)
+        raise
+    print("OK!")
