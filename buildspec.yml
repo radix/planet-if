@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    x=y
+    x: y
 
 phases:
   install:
