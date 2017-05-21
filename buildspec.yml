@@ -13,7 +13,7 @@ phases:
       - python venus/planet.py planet-if.conf
   post_build:
     commands:
-      - aws s3 cp output/* s3://planet-if
+      - aws s3 cp --recursive output s3://planet-if
 
 # artifacts:
 #   files:
