@@ -10,9 +10,7 @@ phases:
       - git clone https://github.com/rubys/venus.git
   build:
     commands:
-      - mkdir output
-      - echo "hello world" > output/index.html
-#      - python venus/planet.py planet-if.conf
+      - python venus/planet.py planet-if.conf
   post_build:
     commands:
       - aws s3 cp output/* s3://planet-if
