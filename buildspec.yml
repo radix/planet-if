@@ -10,7 +10,7 @@ phases:
       - git clone https://github.com/rubys/venus.git
   pre_build:
     commands:
-      - aws s3 cp s3://planet-if/cache.tar.gz cache.tar.gz || echo "no cache"
+      - aws s3 cp s3://planet-if.com/cache.tar.gz cache.tar.gz || echo "no cache"
       - tar xzf cache.tar.gz || echo "no cache"
   build:
     commands:
@@ -18,5 +18,5 @@ phases:
   post_build:
     commands:
       - tar czf cache.tar.gz cache
-      - aws s3 cp cache.tar.gz s3://planet-if
-      - aws s3 cp --recursive output s3://planet-if
+      - aws s3 cp cache.tar.gz s3://planet-if.com
+      - aws s3 cp --recursive output s3://planet-if.com
