@@ -75,6 +75,10 @@ img.face {
 	color: inherit;
 }
 
+.entry img {
+	max-width: 100%;
+}
+
 .sidebar {
 	position: absolute;
 	top: 0px;
