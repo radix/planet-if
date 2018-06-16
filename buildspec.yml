@@ -7,6 +7,7 @@ env:
 phases:
   install:
     commands:
+      - apt-get install -y xsltproc
       - git clone https://github.com/rubys/venus.git
   pre_build:
     commands:
