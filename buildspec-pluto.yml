@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - apt-get update
+      - gem install activerecord -v 6.1.4.4
       - gem install pluto
   pre_build:
     commands:
