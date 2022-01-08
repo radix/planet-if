@@ -17,4 +17,4 @@ phases:
     commands:
       - tar czf pluto-cache.tar.gz pluto.db
       - aws s3 cp pluto-cache.tar.gz s3://planet-if.com
-      - aws s3 cp --recursive output s3://planet-if.com/pluto/
+      - aws s3 cp --recursive output s3://planet-if.com/
