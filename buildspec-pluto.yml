@@ -15,6 +15,6 @@ phases:
       - pluto build -o output pluto.ini
   post_build:
     commands:
-      - tar czf pluto-cache.tar.gz cache
+      - tar czf pluto-cache.tar.gz pluto.db
       - aws s3 cp pluto-cache.tar.gz s3://planet-if.com
       - aws s3 cp --recursive output s3://planet-if.com/pluto/
