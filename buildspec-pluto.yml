@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update
+      - gem install pluto
+  pre_build:
+    commands:
+      - aws s3 cp s3://planet-if.com/pluto-cache.tar.gz pluto-cache.tar.gz || echo "no cache"
+      - tar xzf pluto-cache.tar.gz || echo "no cache"
+  build:
+    commands:
+      - echo "hi"
+  post_build:
+    commands:
+      - tar czf pluto-cache.tar.gz cache
+      - aws s3 cp pluto-cache.tar.gz s3://planet-if.com
+      - aws s3 cp --recursive output s3://planet-if.com/pluto/
