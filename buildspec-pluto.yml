@@ -11,7 +11,7 @@ phases:
       - tar xzf pluto-cache.tar.gz || echo "no cache"
   build:
     commands:
-      - ./bin/pluto build -o output pluto.ini
+      - ./bin/pluto build -o output -t blank pluto.ini
       - ./bin/pluto merge -o output -t feeds pluto.ini
   post_build:
     commands:
