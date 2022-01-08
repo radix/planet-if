@@ -3,3 +3,7 @@ venus
 cache
 output
 templates/*.tmplc
+
+/vendor
+/bin
+/pluto.db

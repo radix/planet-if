@@ -4,17 +4,15 @@ phases:
   install:
     commands:
       - apt-get update
-      - gem install activerecord -v 6.1.4.4
-      - gem install pluto
+      - bundle install --binstubs --path vendor
   pre_build:
     commands:
       - aws s3 cp s3://planet-if.com/pluto-cache.tar.gz pluto-cache.tar.gz || echo "no cache"
       - tar xzf pluto-cache.tar.gz || echo "no cache"
-      - pluto install feeds
   build:
     commands:
-      - pluto build -o output pluto.ini
-      - pluto build -o output -t feeds pluto.ini
+      - ./bin/pluto build -o output pluto.ini
+      - ./bin/pluto merge -o output -t feeds pluto.ini
   post_build:
     commands:
       - tar czf pluto-cache.tar.gz pluto.db

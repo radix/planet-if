@@ -1,0 +1,2 @@
+atom.xml        atom.xml.erb
+rss.xml         rss.xml.erb
