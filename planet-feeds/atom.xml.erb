@@ -23,7 +23,7 @@
     <%= CGI.escapeHTML(item.summary) %>
   <% end %></content>
     <author>
-      <name><%= item.feed.title %></name>
+      <name><%= CGI.escapeHTML(item.feed.title) %></name>
       <uri><%= item.feed.url %></uri>
     </author>
   </entry>
