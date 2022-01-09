@@ -1,7 +1,7 @@
 # pakman manifest
 
 index.html        blank.html.erb
-index.cards.html  blank.cards.html.erb
+cards.html        blank.cards.html.erb
 
 
 css/blank.css
