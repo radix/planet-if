@@ -1,5 +1,5 @@
 # planet-if.com
 
+If you would like to add your blog, make a PR and update pluto.ini.
 
-Changes to planet-if.conf (and maybe the templates too?) are watched by automated AWS processes to
-update the site. Changes to the static files are NOT watched.
+Changes are watched by automated processes to update the site.
