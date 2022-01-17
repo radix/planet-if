@@ -126,12 +126,12 @@
 
 <!-- todo: use sanitize or simplify or whitelist
    - todo/fix: check why summary can be nil/null
-   note: content goes first; than try summary
+   note: content goes first; then try summary
  -->
 <% if item.content %>
-  <%= textify( item.content ) %>
+  <%= item.content %>
 <% elsif item.summary %>
-  <%= textify( item.summary ) %>
+  <%= item.summary %>
 <% else %>
   -/-
 <% end %>
